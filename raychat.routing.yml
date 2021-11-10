@@ -1,0 +1,8 @@
+raychat.settings:
+  path: '/admin/config/system/raychat'
+  defaults:
+    _form: '\Drupal\raychat\Form\SettingsForm'
+    _title: 'Raychat configuration'
+  requirements:
+    _permission: 'administer site configuration'
+

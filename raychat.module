@@ -1,0 +1,44 @@
+<?php
+
+use \Drupal\Core\Routing\RouteMatchInterface;
+
+function raychat_help($route_name, RouteMatchInterface $route_match)
+{
+    if ($route_name == 'help.page.raychat') {
+
+        $output = '';
+        $output .= '<h3>' . t('About') . '</h3>';
+        $output .= '<p>' . t('The Configuration Manager module') . '</p>';
+
+      return $output;
+
+
+    }
+}
+
+
+function raychat_page_attachments(array &$attachments)
+{
+    $config = \Drupal::configFactory()->get('raychat.settings');
+
+    $script_js_token = $config->get('script');
+
+    if($script_js_token)
+    {
+
+        $attachments['#attached']['html_head'][] = [
+            [
+                '#tag' => 'script',
+                '#attributes' => [
+                    'language' => "javascript",
+                    'type' => 'text/javascript',
+                ],
+                '#value' => $script_js_token,
+            ],
+        ];
+
+    }
+
+    
+}
+

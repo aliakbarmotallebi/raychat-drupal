@@ -1,0 +1,6 @@
+name: 'Configuration Raychat'
+type: module
+description : 'raychat module for drupal 8 , 9'
+core: 8.x
+core_version_requirement: ^8 || ^9
+configure: raychat.settings
